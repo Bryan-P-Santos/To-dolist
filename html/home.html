@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <base href="/to-dolist/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/site e app/java/streak.js" />
-    <link rel="stylesheet" href="/site e app/css/nav.css" />
-    <link rel="stylesheet" href="/site e app/css/style.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <title>to-dolist</title>
+
+    <title>Home | to-dolist</title>
   </head>
   <body>
     <header>
@@ -18,19 +21,44 @@
         <div class="navbar-name">
           <a href="#" class="logo-txt">To-dolist</a>
         </div>
+        <ul class="nav-list">
+          <li><a href="html/gastos.html">Seus Gastos</a></li>
+          <li><a href="html/calendario.html">Calendário</a></li>
+          <li><a href="html/FII.html">Fundos de Investimentos</a></li>
+          <li><a href="html/metas.html">Suas Metas</a></li>
+        </ul>
+
+        <!-- user -->
+        <button id="user-btn" class="user-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+
         <div class="mobile-menu">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
-        <ul class="nav-list">
-          <li><a href="gastos.html">Seus Gastos</a></li>
-          <li><a href="FII.html">Fundos de Investimentos</a></li>
-          <li><a href="metas.html">Suas Metas</a></li>
-          <li><a href="calendario.html">Calendário</a></li>
-        </ul>
       </nav>
     </header>
+
+    <!-- user -->
+    <aside class="user-panel" id="userPanel">
+      <h2>Conta</h2>
+
+      <div class="user-info">
+        <div class="avatar"></div>
+        <p>Não logado</p>
+      </div>
+
+      <button>Entrar</button>
+      <button>Criar conta</button>
+
+      <hr />
+
+      <button>⚙️ Configurações</button>
+      <button>🌙 Tema escuro</button>
+      <button>Sair</button>
+    </aside>
 
     <main class="dashboard">
       <section class="perfil">
@@ -49,12 +77,12 @@
           <p>✅ Dia concluído!</p>
         </div>
 
-        <a href="/site e app/html/calendario.html" class="card calendario">
+        <a href="html/calendario.html" class="card calendario">
           <h1><i class="fa-regular fa-calendar"></i> Calendário</h1>
           <p>Veja sua rotina</p>
         </a>
 
-        <a href="/site e app/html/calendario.html" class="card tarefas">
+        <a href="html/calendario.html" class="card tarefas">
           <h1><i class="fa-solid fa-check"></i> Tarefas</h1>
           <p>Lista diária</p>
           <p>Hoje: 3 tarefas</p>
@@ -64,7 +92,7 @@
         <section class="gastos">
           <div class="gastos-mes">
             <h1>
-              <a href="/site e app/html/gastos.html" class="link-gastos"
+              <a href="html/gastos.html" class="link-gastos"
                 ><strong>Gastos do mês</strong></a
               >
             </h1>
@@ -114,7 +142,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/site e app/java/mobile-navbar.js"></script>
-    <script src="/site e app/java/java.js"></script>
+    <script src="java/mobile-navbar.js"></script>
+    <script src="java/java.js"></script>
   </body>
 </html>

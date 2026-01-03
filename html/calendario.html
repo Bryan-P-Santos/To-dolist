@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <base href="/to-dolist/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/site e app/java/streak.js" />
-    <link rel="stylesheet" href="/site e app/css/nav.css" />
-    <link rel="stylesheet" href="/site e app/css/calendario.css" />
-    <link rel="stylesheet" href="/site e app/css/style.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/calendario.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
-    <title>Calendário - To-dolist</title>
+    <title>Calendário | To-dolist</title>
   </head>
   <body>
     <header>
       <nav>
         <div class="navbar-name">
-          <a href="home.html" class="logo-txt">To-dolist</a>
+          <a href="#" class="logo-txt">To-dolist</a>
         </div>
+        <ul class="nav-list">
+          <li><a href="html/home.html">Home</a></li>
+          <li><a href="html/gastos.html">Seus Gastos</a></li>
+          <li><a href="html/FII.html">Fundos de Investimentos</a></li>
+          <li><a href="html/metas.html">Suas Metas</a></li>
+        </ul>
+
+        <!-- user -->
+        <button id="user-btn" class="user-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+
         <div class="mobile-menu">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
-        <ul class="nav-list">
-          <li><a href="home.html">Página inicial</a></li>
-          <li><a href="gastos.html">Seus Gastos</a></li>
-          <li><a href="FII.html">Fundos</a></li>
-          <li><a href="metas.html">Metas</a></li>
-        </ul>
       </nav>
     </header>
 
+    <!-- user -->
+    <aside class="user-panel" id="userPanel">
+      <h2>Conta</h2>
+
+      <div class="user-info">
+        <div class="avatar"></div>
+        <p>Não logado</p>
+      </div>
+
+      <button>Entrar</button>
+      <button>Criar conta</button>
+
+      <hr />
+
+      <button>⚙️ Configurações</button>
+      <button>🌙 Tema escuro</button>
+      <button>Sair</button>
+    </aside>
     <main class="calendar-page">
       <div class="calendar-header">
         <button id="prevMonth">&larr;</button>
@@ -114,7 +138,7 @@
       </div>
     </main>
 
-    <script src="/site e app/java/mobile-navbar.js"></script>
-    <script src="/site e app/java/calendario.js"></script>
+    <script src="java/mobile-navbar.js"></script>
+    <script src="java/calendario.js"></script>
   </body>
 </html>

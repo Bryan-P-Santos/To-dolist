@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-br
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/site e app/css/nav.css">
-    <title>to-dolist</title>
-</head>
-<body>
+<html lang="pt-br">
+  <head>
+    <base href="/to-dolist/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <title>fundos de Investimenstos | to-dolist</title>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="navbar-name">
-                <a href="#" class="logo-txt">To-dolist</a>
-            </div>
-            <div class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="nav-list">
-                <li><a href="home.html">Pagina inicial</a></li>
-                <li><a href="gastos.html">Seus Gastos</a></li>
-                <li><a href="metas.html">Suas Metas</a></li>
-                <li><a href="calendario.html">Calendário</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <div class="navbar-name">
+          <a href="#" class="logo-txt">To-dolist</a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="html/home.html">Home</a></li>
+          <li><a href="html/calendario.html">Calendário</a></li>
+          <li><a href="html/gastos.html">Seus Gastos</a></li>
+          <li><a href="html/metas.html">Suas Metas</a></li>
+        </ul>
+
+        <!-- user -->
+        <button id="user-btn" class="user-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
     </header>
-    
-    <script src="/site e app/java/mobile-navbar.js"></script>
-</body>
+    <!-- user -->
+    <aside class="user-panel" id="userPanel">
+      <h2>Conta</h2>
+
+      <div class="user-info">
+        <div class="avatar"></div>
+        <p>Não logado</p>
+      </div>
+
+      <button>Entrar</button>
+      <button>Criar conta</button>
+
+      <hr />
+
+      <button>⚙️ Configurações</button>
+      <button>🌙 Tema escuro</button>
+      <button>Sair</button>
+    </aside>
+    <main></main>
+    <script src="java/mobile-navbar.js"></script>
+  </body>
 </html>
