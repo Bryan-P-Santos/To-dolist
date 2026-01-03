@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/site e app/css/nav.css">
+    <link rel="stylesheet" href="/site e app/css/gastos.css">
+    <title>to-dolist</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar-name">
+                <a href="#" class="logo-txt">To-dolist</a>
+            </div>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="home.html">Pagina inicial</a></li>
+                <li><a href="FII.html">Fundos de Investimentos</a></li>
+                <li><a href="metas.html">Suas Metas</a></li>
+                <li><a href="calendario.html">Calendário</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main class="planilha">
+  <h1>Controle Financeiro Mensal</h1>
+
+  <!-- ===============================
+       ENTRADA / RECEITAS
+  =============================== -->
+  <section class="bloco">
+    <h2>Entrada / Receitas</h2>
+
+    <div class="linha">
+      <span>Salário</span>
+      <input type="number" id="salario" placeholder="R$ 0,00" />
+    </div>
+
+    <div class="linha">
+      <span>Renda extra</span>
+      <input type="number" class="receita" />
+    </div>
+
+    <div class="linha">
+      <span>Freelance / Bicos</span>
+      <input type="number" class="receita" />
+    </div>
+
+    <div class="linha total">
+      <strong>Total de receitas</strong>
+      <strong>R$ <span id="total-receitas">0</span></strong>
+    </div>
+  </section>
+
+  <!-- ===============================
+       DESPESAS FIXAS
+  =============================== -->
+  <section class="bloco">
+    <h2>Despesas Fixas</h2>
+
+    <div class="linha">
+      <span>Aluguel</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Condomínio</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>IPTU / IPVA</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Seguros</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Empréstimos / Financiamentos</span
+      ><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Mensalidades (escola / cursos)</span
+      ><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Fatura do cartão de crédito</span
+      ><input type="number" class="gasto" />
+    </div>
+
+    <div class="linha total">
+      <strong>Total despesas fixas</strong>
+      <strong>R$ <span id="total-fixo">0</span></strong>
+    </div>
+  </section>
+
+  <!-- ===============================
+       DESPESAS VARIÁVEIS
+  =============================== -->
+  <section class="bloco">
+    <h2>Despesas Variáveis</h2>
+
+    <div class="linha">
+      <span>Água</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Luz</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Gás</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Internet/Conta de celular</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Comida / Mercado</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Transporte (Gasolina / Uber / Ônibus)</span
+      ><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Medicamentos / Saúde</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Manutenção (casa / carro)</span
+      ><input type="number" class="gasto" />
+    </div>
+
+    <div class="linha total">
+      <strong>Total despesas variáveis</strong>
+      <strong>R$ <span id="total-variavel">0</span></strong>
+    </div>
+  </section>
+
+  <!-- ===============================
+       LAZER / OPCIONAL
+  =============================== -->
+  <section class="bloco">
+    <h2>Lazer / Opcional</h2>
+
+    <div class="linha">
+      <span>Lazer</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Delivery</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Viagens</span><input type="number" class="gasto" />
+    </div>
+    <div class="linha">
+      <span>Compras pessoais</span><input type="number" class="gasto" />
+    </div>
+  </section>
+
+  <!-- ===============================
+       RESUMO FINAL
+  =============================== -->
+  <section class="bloco resumo">
+    <h2>Resumo</h2>
+
+    <p>
+      Total de gastos: <strong>R$ <span id="total-gastos">0</span></strong>
+    </p>
+    <p>
+      Sobra do salário: <strong>R$ <span id="sobra">0</span></strong>
+    </p>
+  </section>
+
+  <section class="tabela-anual">
+    <select id="ano-select"></select>
+
+    <button id="fechar-mes">Fechar mês</button>
+<!-- <div class="controle-moeda">
+  <label for="select-moeda">Moeda:</label>
+  <select id="select-moeda"></select>
+</div> -->
+    <h2>Resumo Anual</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Mês</th>
+          <th>Receita</th>
+          <th>Gastos</th>
+          <th>Sobra</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-ano">
+        <!-- JS vai preencher -->
+      </tbody>
+    </table>
+  
+  </section>
+
+  
+  <canvas id="graficoAno" width="400px" height="200"></canvas>
+</main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="/site e app/java/gastos.js" defer></script>
+    
+    <script src="/site e app/java/mobile-navbar.js"></script>
+</body>
+</html>

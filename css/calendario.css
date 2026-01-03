@@ -1,0 +1,426 @@
+/* ==================== ESTILOS GERAIS ==================== */
+body {
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.calendar-page {
+  width: 95%;
+  margin: auto;
+  padding-top: 25px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.calendar-header h2 {
+  text-transform: capitalize;
+}
+
+.weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.weekdays div {
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 0;
+  color: #555;
+}
+
+.calendar-grid div {
+  background: #fff;
+  padding: 12px;
+  min-height: 70px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-grid div.has-event {
+  background: #d5b8ff;
+  border: 2px solid #9a67ea;
+  color: white;
+}
+
+.calendar-grid div:hover {
+  background: #f4f4f4;
+}
+
+/* ==================== MODAL ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  width: 330px;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  background: #7d4bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.secondary {
+  background: #aaa;
+  margin-top: 6px;
+}
+
+/* ==================== LISTA DE TAREFAS ==================== */
+
+#lista-tarefas {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0;
+  list-style: none;
+  width: 400px;
+}
+.task-list {
+  width: 340px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.task-name {
+  flex: 1;
+}
+
+.btn-completar,
+.btn-editar {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+}
+
+.btn-completar.active {
+  background: #a855f7;
+  color: #fff;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+/* Tarefa concluída */
+.task.done .task-name {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+/* Toggle lista */
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #6a4cfc;
+}
+
+#lista-tarefas {
+  margin-top: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 0;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.task-name {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.btn-completar,
+.btn-editar {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: 4px;
+  background-color: #fff;
+  color: #6a4cfc;
+  font-weight: bold;
+  display: flex;
+}
+
+.btn-completar.active {
+  background-color: #a855f7; /* roxo */
+  color: white;
+  border-color: #a855f7;
+}
+
+.task.done .task-name {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #6a4cfc;
+}
+/* LISTA DE TAREFAS */
+#lista-tarefas {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#lista-tarefas li.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Nome da tarefa */
+.task-name {
+  flex: 1;
+  margin-right: 10px;
+}
+
+/* Horário */
+.task-time {
+  margin-right: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Botões concluir e editar */
+.btn-completar,
+.btn-editar {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.btn-completar.active {
+  background: #a855f7;
+  color: #fff;
+}
+
+.btn-completar:hover,
+.btn-editar:hover {
+  background: #ece6ff;
+}
+
+/* POPUP EDITAR */
+
+.popup.hidden {
+  display: none;
+}
+
+.popup input {
+  width: 200px;
+  border-radius: 5px;
+}
+
+.popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content input {
+  width: 310px;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Botão minimizar lista */
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #6a4cfc;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  opacity: 0.6;
+}
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.weekend span {
+  color: red;
+}
+/* Número do dia feriado */
+.feriado span {
+  color: red; /* só o número do dia */
+  font-weight: bold;
+}
+
+/* Número do dia comemorativo */
+.comemorativo span {
+  color: dodgerblue;
+  font-weight: bold;
+}
+
+/* Tooltip (hover) */
+.day .tooltip {
+  color: white; /* só o texto do hover */
+  background-color: gray; /* fundo do tooltip */
+}
+
+/* Garantir que cada dia seja relativo para a tooltip */
+.day {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Tooltip desktop (hover) */
+.tooltip {
+  visibility: hidden;
+  background-color: gray; /* vermelho para feriados */
+  color: #fff;
+  font-size: 0.75rem;
+  text-align: center;
+  border-radius: 4px;
+  padding: 2px 5px;
+  position: absolute;
+  z-index: 10;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.day:hover .tooltip {
+  visibility: visible;
+}
+
+/* Tooltip mobile (click) */
+.tooltip-mobile {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff4d4d;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  padding: 2px 5px;
+  z-index: 20;
+}
+.streak-fire {
+  font-size: 22px;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+@keyframes pulseFire {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

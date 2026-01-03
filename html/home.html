@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/site e app/java/streak.js" />
+    <link rel="stylesheet" href="/site e app/css/nav.css" />
+    <link rel="stylesheet" href="/site e app/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>to-dolist</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar-name">
+          <a href="#" class="logo-txt">To-dolist</a>
+        </div>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="gastos.html">Seus Gastos</a></li>
+          <li><a href="FII.html">Fundos de Investimentos</a></li>
+          <li><a href="metas.html">Suas Metas</a></li>
+          <li><a href="calendario.html">Calendário</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="dashboard">
+      <section class="perfil">
+        <img src="/projetoSiteAv/img/arroz.jpg" alt="" id="perfil-foto" />
+        <div class="p-foto">
+          <p>Olá, <strong>JELIO</strong> 👋</p>
+          <p>Vamos organizar seu dia?</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card resumo-dia">
+          <h1>Resumo do Dia</h1>
+          <p id="data">Segunda-feira: 14 de Outubro</p>
+          <p>❌ <strong>3</strong> Tarefas pendentes</p>
+          <p>✅ Dia concluído!</p>
+        </div>
+
+        <a href="/site e app/html/calendario.html" class="card calendario">
+          <h1><i class="fa-regular fa-calendar"></i> Calendário</h1>
+          <p>Veja sua rotina</p>
+        </a>
+
+        <a href="/site e app/html/calendario.html" class="card tarefas">
+          <h1><i class="fa-solid fa-check"></i> Tarefas</h1>
+          <p>Lista diária</p>
+          <p>Hoje: 3 tarefas</p>
+        </a>
+
+        <!-- gastos -->
+        <section class="gastos">
+          <div class="gastos-mes">
+            <h1>
+              <a href="/site e app/html/gastos.html" class="link-gastos"
+                ><strong>Gastos do mês</strong></a
+              >
+            </h1>
+            <p id="salario-mes">
+              Salário: <strong id="moeda-local">R$</strong>
+              <strong id="strong-sal"> 3.500,00</strong>
+            </p>
+            <p id="gastos-pal">
+              Gastos: <strong id="moeda-local">R$</strong>
+              <strong id="strong-gast"> 2.500,00</strong>
+            </p>
+            <p id="sobra-mes">
+              Sobra: <strong id="moeda-local">R$</strong>
+              <strong id="strong-sobra"> 1.000,00</strong>
+            </p>
+          </div>
+
+          <div class="metas">
+            <div class="meta-img-box">
+              <img id="meta-img" src="img/default-icons/pc.png" alt="Meta" />
+            </div>
+            <h1>
+              <strong>Objetivo:</strong>
+              <strong id="meta-escolhida">Novo PC</strong>
+            </h1>
+            <p>
+              <strong>Progresso:</strong> <strong id="progresso">76%</strong>
+            </p>
+            <div class="barra-progresso">
+              <div class="barra-progresso-preenchida" style="width: 67%"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <div class="fii">
+        <h1>💡Você está indo bem!</h1>
+        <p>
+          Que tal guardar a parte que os <strong id="sobra">0.00</strong> que
+          sobrou?
+        </p>
+        <p>
+          investindo nesse
+          <strong id="fundo de investimento">fundo de investimentos</strong>
+        </p>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/site e app/java/mobile-navbar.js"></script>
+    <script src="/site e app/java/java.js"></script>
+  </body>
+</html>

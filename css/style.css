@@ -1,0 +1,359 @@
+/* =========================================================
+   LAYOUT PRINCIPAL
+========================================================= */
+
+.dashboard {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PERFIL
+========================================================= */
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+#perfil-foto {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   GRID PRINCIPAL
+========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "resumo resumo"
+    "calendario tarefas"
+    "gastos gastos";
+  gap: 20px;
+  width: 100%;
+  justify-items: center;
+}
+
+/* =========================================================
+   CARDS – BASE
+========================================================= */
+
+.card {
+  padding: 25px;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* =========================================================
+   RESUMO DO DIA
+========================================================= */
+
+.resumo-dia {
+  grid-area: resumo;
+  background: linear-gradient(135deg, #6f52d9, #8e6ceb, #a98cf5);
+  min-height: 160px;
+  max-width: 850px;
+  width: 100%;
+}
+
+/* =========================================================
+   MINI CARDS
+========================================================= */
+
+.calendario {
+  grid-area: calendario;
+  background: linear-gradient(135deg, #4c84f5, #6fa1ff);
+}
+
+.tarefas {
+  grid-area: tarefas;
+  background: linear-gradient(135deg, #6f52d9, #8e6ceb, #a98cf5);
+}
+
+.calendario,
+.tarefas {
+  width: 100%;
+  max-width: 280px;
+  height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================================================
+   GASTOS E METAS
+========================================================= */
+
+.gastos {
+  grid-area: gastos;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  width: 100%;
+  justify-items: center;
+}
+
+.gastos-mes,
+.metas,
+.fii {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.gastos-mes h1,
+.metas h1,
+.fii h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.gastos-mes p,
+.metas p,
+.fii {
+  margin: 6px 0;
+}
+
+.fii {
+  top: 50%;
+  left: 50%;
+  display: block;
+}
+/* =========================================================
+   BARRA DE PROGRESSO – OBJETIVO
+========================================================= */
+
+.barra-progresso {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.barra-progresso-preenchida {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #6f52d9, #8e6ceb);
+  border-radius: 20px;
+  transition: width 0.6s ease;
+}
+
+/* =========================================================
+   META – IMAGEM
+========================================================= */
+
+.meta-img-box {
+  width: 100%;
+  height: 90px;
+  background: #eee;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.meta-img-box img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "resumo"
+      "calendario"
+      "tarefas"
+      "gastos";
+  }
+
+  .gastos {
+    grid-template-columns: 1fr;
+  }
+
+  .gastos-mes,
+  .metas {
+    max-width: 90%;
+  }
+}
+/* =========================================================
+   Tabela
+========================================================= */
+
+.tabela-anual {
+  margin-left: 40px;
+  min-width: 420px;
+}
+
+.tabela-anual table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-anual th,
+.tabela-anual td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabela-anual th {
+  background: #f2f2f2;
+}
+
+.mes-atual {
+  background: #dcd2ff;
+  font-weight: bold;
+}
+
+.link-gastos {
+  color: #000;
+  text-decoration: none;
+}
+
+.link-gastos:visited {
+  color: #000;
+}
+/* ==================== DIA CONCLUÍDO ==================== */
+
+.dia-concluido {
+  animation: pulseSuccess 0.8s ease-in-out;
+  border: 2px solid #7c3aed;
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+  color: white;
+}
+
+@keyframes pulseSuccess {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(124, 58, 237, 0.7);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(124, 58, 237, 0.7);
+  }
+}
+/* ==================== CONFETE ==================== */
+
+.resumo-dia {
+  position: relative;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  opacity: 0.9;
+  animation: cairConfete 2.2s ease-out forwards;
+}
+
+@keyframes cairConfete {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(220px) rotate(360deg);
+    opacity: 0;
+  }
+}
+.streak-fire {
+  font-size: 22px;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+@keyframes pulseFire {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.streak-fogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1.6rem;
+  animation: fogoPulse 1.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+@keyframes fogoPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 12px currentColor);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+}
+
+/* cores por streak */
+.fogo-vermelho {
+  color: #ef4444;
+}
+.fogo-amarelo {
+  color: #facc15;
+}
+.fogo-azul {
+  color: #3b82f6;
+}
+.fogo-roxo {
+  color: #8b5cf6;
+}

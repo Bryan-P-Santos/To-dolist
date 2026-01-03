@@ -1,0 +1,289 @@
+/* =========================
+   RESET / BASE
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f1f1f1;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+.planilha {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   BLOCOS / CARDS
+========================= */
+.bloco {
+  background: #1b1b2f;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.bloco h2 {
+  margin-bottom: 15px;
+  color: #6f52d9;
+}
+
+/* =========================
+   LINHAS
+========================= */
+.linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.linha span {
+  flex: 1;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.linha input {
+  width: 110px;
+  background: #101025;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  color: #fff;
+  text-align: right;
+}
+
+.linha.total {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #333;
+  font-weight: bold;
+}
+
+/* =========================
+   RESUMO (CORRIGIDO)
+========================= */
+.resumo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resumo p {
+  font-size: 16px;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* =========================
+   BOTÕES (MENOR E ELEGANTE)
+========================= */
+button {
+  background: linear-gradient(135deg, #6f52d9, #8f7aff);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* botão específico */
+#fechar-mes {
+  width: fit-content;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+/* =========================
+   SELECT ANO
+========================= */
+#ano-select {
+  background: #1b1b2f;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  padding: 8px 12px;
+  margin: 10px 0;
+  width: fit-content;
+}
+
+/* =========================
+   TABELA ANUAL
+========================= */
+.tabela-anual {
+  background: #1b1b2f;
+  border-radius: 14px;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #6f52d9;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid #333;
+}
+
+.mes-atual {
+  background: rgba(111, 82, 217, 0.25);
+  font-weight: bold;
+}
+
+/* =========================
+   GRÁFICO
+========================= */
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  margin-top: 30px;
+  background: #1b1b2f;
+  border-radius: 14px;
+  padding: 15px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .planilha {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .linha {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .linha input {
+    width: 100%;
+  }
+
+  button,
+  #fechar-mes,
+  #ano-select {
+    width: 100%;
+    text-align: center;
+  }
+
+  h1,
+  h2 {
+    font-size: 18px;
+  }
+}
+/* =========================
+   GRID AJUSTADO – DASHBOARD
+========================= */
+@media (min-width: 1024px) {
+  .planilha {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+
+  /* força o gráfico ocupar a linha inteira */
+  .grafico,
+  canvas {
+    grid-column: 1 / -1;
+  }
+
+  /* tabela anual mais estável */
+  .tabela-anual {
+    max-height: 800px;
+    overflow-y: auto;
+  }
+}
+/* =========================
+   TABELA ANUAL (CORRIGIDA)
+========================= */
+.tabela-anual {
+  width: 100%;
+  background: #1b1b2f;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+/* desktop: sem scroll forçado */
+@media (min-width: 769px) {
+  .tabela-anual {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* mobile: scroll horizontal apenas */
+@media (max-width: 768px) {
+  .tabela-anual {
+    overflow-x: auto;
+  }
+
+  .tabela-anual table {
+    min-width: 600px;
+  }
+}
+
+/* =========================
+   TÍTULO CENTRALIZADO
+========================= */
+h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   BOTÃO CENTRAL
+========================= */
+#fechar-mes {
+  align-self: center;
+  margin-inline: auto;
+}
+
+/* =========================
+   GRÁFICO COM DESTAQUE
+========================= */
+canvas {
+  min-height: 260px;
+}
+
+/* =========================
+   EVITA BLOCOS ESTICADOS
+========================= */
+.bloco {
+  height: fit-content;
+}
