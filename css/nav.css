@@ -1,5 +1,4 @@
 nav {
-  display: flex;
   align-items: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -150,6 +149,7 @@ nav a {
   gap: 15px;
   margin: 20px;
 }
+
 /* user */
 .user-btn {
   background: none;
@@ -159,35 +159,11 @@ nav a {
   font-size: 20px;
 }
 
-@media (max-width: 999px) {
-  body {
-    overflow-x: hidden;
-  }
-  .user-panel {
-    position: absolute;
-    top: 10vh;
-    right: 0;
-    width: 60vw;
-    height: 92vh;
-    background: #23232e;
-    color: white;
-
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 12px;
-
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
-    z-index: 999;
-  }
-}
 .user-panel {
   position: absolute;
-  top: 10vh;
+  top: 9vh;
   right: 0;
-  width: 60vw;
+  width: 16vw;
   height: 92vh;
   background: #23232e;
   color: white;
@@ -201,6 +177,17 @@ nav a {
   transition: transform 0.3s ease-in;
   z-index: 999;
 }
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .user-panel {
+    top: 10vh;
+    width: 50vw; /* só isso */
+    max-width: 320px; /* opcional */
+  }
+}
 .user-panel.active {
   transform: translateX(0);
 }
@@ -211,4 +198,98 @@ nav a {
   border-radius: 50%;
   background: #555;
   margin-bottom: 10px;
+}
+
+aside button {
+  padding: 10px 14px;
+  border: none;
+  background: #7d4bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ======================================= button darklight ================================= */
+:root {
+  --color: #9176ff;
+  --dark-color: #2b2b2b;
+  --light-color: #f7f7f7;
+  --light-icon-color: #ffde59;
+  --dark-icon-color: #9176ff;
+}
+
+/* BOTÃO */
+.btn {
+  background-color: #fff;
+  width: 60px;
+  height: 30px;
+  border-radius: 10em;
+  padding: 0 4px;
+
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* INDICADOR */
+.btn_indicator {
+  background-color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+
+  position: absolute;
+  left: 2px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* ÍCONE */
+.btn_icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_icon {
+  color: var(--light-icon-color);
+  font-size: 1.2rem;
+}
+
+/* ANIMAÇÃO */
+.btn_icon.animated {
+  animation: spin 0.5s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* DARK MODE */
+body.darkmode {
+  background-color: var(--dark-color);
+}
+
+.darkmode .btn {
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 2px 0 4px rgba(0, 0, 0, 0.3), inset 0 -2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode .btn_indicator {
+  transform: translateX(30px);
+  background-color: var(--dark-color);
+}
+
+.darkmode .btn_icon {
+  color: var(--dark-icon-color);
 }

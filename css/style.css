@@ -114,18 +114,37 @@
   grid-area: gastos;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "gastos-mes metas"
+    "fii fii";
   gap: 25px;
   width: 100%;
   justify-items: center;
 }
 
+.gastos-mes {
+  grid-area: gastos-mes;
+}
+
+.metas {
+  grid-area: metas;
+}
+
+.fii {
+  grid-area: fii;
+  justify-self: center;
+}
+
 .gastos-mes,
 .metas,
 .fii {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  color: var(--text);
   width: 100%;
   max-width: 420px;
-  background: #fff;
-  border: 2px solid #000;
+  /* background: #fff;
+  border: 2px solid #000; */
   border-radius: 16px;
   padding: 20px;
   box-sizing: border-box;
@@ -210,13 +229,21 @@
 
   .gastos {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "gastos-mes"
+      "metas"
+      "fii";
+    justify-items: center;
   }
 
   .gastos-mes,
-  .metas {
-    max-width: 90%;
+  .metas,
+  .fii {
+    max-width: 95%;
+    width: 100%;
   }
 }
+
 /* =========================================================
    Tabela
 ========================================================= */

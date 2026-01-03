@@ -4,9 +4,11 @@
     <base href="/to-dolist/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/calendario.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/darklight.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -49,14 +51,22 @@
         <p>Não logado</p>
       </div>
 
-      <button>Entrar</button>
-      <button>Criar conta</button>
+      <button id="login">Entrar</button>
+      <button id="cadastro">Criar conta</button>
 
       <hr />
 
-      <button>⚙️ Configurações</button>
-      <button>🌙 Tema escuro</button>
-      <button>Sair</button>
+      <button id="Configurações">⚙️ Configurações</button>
+
+      <div class="btn">
+        <div class="btn_indicator">
+          <div class="btn_icon-container">
+            <i class="btn_icon fa-solid fa-sun"></i>
+          </div>
+        </div>
+      </div>
+
+      <button id="sair">Sair</button>
     </aside>
     <main class="calendar-page">
       <div class="calendar-header">
@@ -140,5 +150,6 @@
 
     <script src="java/mobile-navbar.js"></script>
     <script src="java/calendario.js"></script>
+    <script src="java/darklight.js"></script>
   </body>
 </html>

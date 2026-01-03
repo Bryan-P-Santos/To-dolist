@@ -1,0 +1,39 @@
+/* =========================
+   CORES & TEMA
+========================= */
+:root {
+  --primary: #6f52d9;
+  --primary-soft: #8e6ceb;
+
+  /* light */
+  --bg: #f7f7f7;
+  --surface: #ffffff;
+  --surface-soft: #f0f0f0;
+  --text: #1a1a1a;
+  --text-soft: #555;
+  --border: #d0d0d0;
+}
+
+body.dark {
+  --bg: #0f0f14;
+  --surface: #1b1b2f;
+  --surface-soft: #23233a;
+  --text: #f1f1f1;
+  --text-soft: #b5b5c5;
+  --border: #2f2f44;
+}
+
+/* =========================
+   BASE
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}

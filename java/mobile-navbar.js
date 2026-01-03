@@ -48,3 +48,37 @@ const userPanel = document.getElementById("userPanel");
 userBtn.onclick = () => {
   userPanel.classList.toggle("active");
 };
+
+// ================================ button darklight =================================
+const body = document.querySelector("body");
+const btn = document.querySelector(".btn");
+const icon = document.querySelector(".btn_icon");
+
+btn.addEventListener("click", () => {
+  body.classList.toggle("darkmode");
+  icon.classList.add("animated");
+
+  if (body.classList.contains("darkmode")) {
+    icon.classList.remove("fa-sun");
+    icon.classList.add("fa-moon");
+  } else {
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+  }
+
+  setTimeout(() => {
+    icon.classList.remove("animated");
+  }, 500);
+});
+
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark");
+}
+
+toggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    body.classList.contains("dark") ? "dark" : "light"
+  );
+});
