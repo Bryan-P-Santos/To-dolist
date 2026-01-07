@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <base href="/to-dolist/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register e login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar-name">
+          <a href="#" class="logo-txt">To-dolist</a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="html/home.html">Home</a></li>
+          <li><a href="html/gastos.html">Seus Gastos</a></li>
+          <li><a href="html/calendario.html">Calendário</a></li>
+          <li><a href="html/FII.html">Fundos de Investimentos</a></li>
+          <li><a href="html/metas.html">Suas Metas</a></li>
+        </ul>
+
+        <!-- user -->
+        <button id="user-btn" class="user-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- user -->
+    <aside class="user-panel" id="userPanel">
+      <h2>Conta</h2>
+
+      <div class="user-info">
+        <div class="avatar"></div>
+        <p>Não logado</p>
+      </div>
+
+      <button id="login">Entrar</button>
+      <button id="cadastro">Criar conta</button>
+
+      <hr />
+
+      <button id="Configurações">⚙️ Configurações</button>
+
+      <div class="btn">
+        <div class="btn_indicator">
+          <div class="btn_icon-container">
+            <i class="btn_icon fa-solid fa-sun"></i>
+          </div>
+        </div>
+      </div>
+
+      <button id="sair">Sair</button>
+    </aside>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="form-box login">
+          <form action="">
+            <h1 class="h1-login">Login</h1>
+            <div class="input-box">
+              <input type="text" placeholder="Nome de usuário" required />
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Senha" required />
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="forgot-link">
+              <a href="#">Esqueceu a senha?</a>
+            </div>
+            <button type="submit" id="login-btn">Login</button>
+            <p>ou login por outras plataformas sociais</p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-google"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+          </form>
+        </div>
+        <div class="form-box register">
+          <form action="">
+            <h1 class="h1-login">Cadastro</h1>
+            <div class="input-box">
+              <input type="text" placeholder="Nome de usuário" required />
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+              <input type="email" placeholder="Email" required />
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Senha" required />
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="forgot-link">
+              <a href="#">Esqueceu sua Senha?</a>
+            </div>
+            <button type="submit" class="cadastro-btn">Cadastrar</button>
+            <p>ou cadastrar por outras plataformas sociais</p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-google"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+          </form>
+        </div>
+        <div class="toggle-box">
+          <div class="toggle-panel toggle-left">
+            <h1 class="h1-login">Olá, Seja Bem-vido(a) !</h1>
+            <p>Você não tem uma conta?</p>
+            <button class="registro-btn">Cadastro</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1 class="h1-login">Bem-vido, De volta !</h1>
+            <p>Você já tem uma conta?</p>
+            <button class="login-butn">Login</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- <footer>
+      <div id="footer_content">
+        <div id="footer_contacts">
+          <h1 id="h1-login">Boca Cheia</h1>
+          <p>Sabores que conquistam!</p>
+
+          <div id="footer_social_media">
+            <a href="#" class="footer-link" id="instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-link" id="facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="footer-link" id="whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <ul class="footer-list">
+          <li><h3>Informações</h3></li>
+          <li><a href="sobrenos.html" class="footer-link">Sobre nós</a></li>
+          <li>
+            <a href="Faq.html" class="footer-link">Perguntas Frequentes</a>
+          </li>
+          <li>
+            <a href="cardapio.html" class="footer-link">Nosso Cardápio</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><h3>Serviços</h3></li>
+          <li><a href="#" class="footer-link">Rodízio</a></li>
+          <li><a href="#" class="footer-link">Eventos e Reservas</a></li>
+          <li><a href="#" class="footer-link">Delivery</a></li>
+        </ul>
+
+        <div id="footer_subscribe">
+          <h3>Novidades</h3>
+          <p>Receba promoções e novidades da nossa churrascaria:</p>
+          <div id="input_group">
+            <input type="email" id="email" placeholder="Digite seu e-mail" />
+            <button><i class="fa-regular fa-envelope"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer_copyright">
+        &#169; 2025 to-dolist — Todos os direitos reservados.
+      </div>
+    </footer> -->
+
+    <script src="java/mobile-navbar.js"></script>
+    <script src="java/login.js"></script>
+    <script src="java/java.js"></script>
+  </body>
+</html>

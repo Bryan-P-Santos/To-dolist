@@ -108,7 +108,7 @@ button {
   width: 400px;
 }
 .task-list {
-  width: 340px;
+  width: 300px;
 }
 
 .task {
@@ -315,7 +315,7 @@ button {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  min-width: 260px;
+  min-width: 340px;
   display: flex;
   flex-direction: column;
   gap: 10px;
