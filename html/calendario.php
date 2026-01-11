@@ -1,14 +1,20 @@
+<?php
+// futuramente: session_start();
+// futuramente: verificação de login
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <base href="/to-dolist/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/calendario.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/darklight.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -17,57 +23,9 @@
     <title>Calendário | To-dolist</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="navbar-name">
-          <a href="#" class="logo-txt">To-dolist</a>
-        </div>
-        <ul class="nav-list">
-          <li><a href="html/home.html">Home</a></li>
-          <li><a href="html/gastos.html">Seus Gastos</a></li>
-          <li><a href="html/FII.html">Fundos de Investimentos</a></li>
-          <li><a href="html/metas.html">Suas Metas</a></li>
-        </ul>
+    <?php include "html/nav.php"; ?>
+    <?php include "html/user-panel.php"; ?>
 
-        <!-- user -->
-        <button id="user-btn" class="user-btn">
-          <i class="fa-solid fa-user"></i>
-        </button>
-
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- user -->
-    <aside class="user-panel" id="userPanel">
-      <h2>Conta</h2>
-
-      <div class="user-info">
-        <div class="avatar"></div>
-        <p>Não logado</p>
-      </div>
-
-      <button id="login">Entrar</button>
-      <button id="cadastro">Criar conta</button>
-
-      <hr />
-
-      <button id="Configurações">⚙️ Configurações</button>
-
-      <div class="btn">
-        <div class="btn_indicator">
-          <div class="btn_icon-container">
-            <i class="btn_icon fa-solid fa-sun"></i>
-          </div>
-        </div>
-      </div>
-
-      <button id="sair">Sair</button>
-    </aside>
     <main class="calendar-page">
       <div class="calendar-header">
         <button id="prevMonth">&larr;</button>
@@ -87,10 +45,11 @@
 
       <div class="calendar-grid" id="calendar"></div>
 
-      <!-- modal para adicionar tarefas -->
+      <!-- modal -->
       <div id="modal" class="modal">
         <div class="modal-content">
           <h3 id="selected-date"></h3>
+
           <label>Tarefa salva:</label>
           <select id="task-title">
             <option value="">(Nenhum)</option>
@@ -113,9 +72,9 @@
           <div class="task-list" id="task-list"></div>
         </div>
       </div>
+
       <div id="tooltip" class="tooltip"></div>
 
-      <!-- Lista de tarefas salvas -->
       <h2 class="task-title">
         Minhas Tarefas
         <button id="toggle-task-list" class="toggle-btn">−</button>
@@ -128,7 +87,6 @@
 
       <ul id="lista-tarefas"></ul>
 
-      <!-- Popup editar tarefa -->
       <div id="popup-editar" class="popup hidden">
         <h3>Editar tarefa</h3>
         <input id="edit-nome" />
@@ -136,6 +94,7 @@
         <button id="btn-salvar-edit">Salvar</button>
         <button id="btn-excluir-edit" class="btn-excluir-edit">Excluir</button>
       </div>
+
       <div id="popup-dias" class="modal hidden">
         <div class="modal-content">
           <h3>Escolha os dias</h3>

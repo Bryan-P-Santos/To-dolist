@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/tstfii.css" />
     <title>fundos de Investimenstos | to-dolist</title>
   </head>
   <body>
@@ -58,7 +59,26 @@
 
       <button id="sair">Sair</button>
     </aside>
-    <main></main>
+    <main class="fiis-container">
+      <h1>Fundos Imobiliários (FIIs)</h1>
+
+      <div class="fii-controls">
+        <select id="fiiSelect">
+          <option value="KNCR11">KNCR11</option>
+          <option value="HGLG11">HGLG11</option>
+          <option value="MXRF11">MXRF11</option>
+          <option value="VISC11">VISC11</option>
+        </select>
+
+        <button id="verFii">Ver informações</button>
+      </div>
+
+      <div id="fiiResultado" class="fii-card">
+        <p>Selecione um FII para ver os dados.</p>
+      </div>
+    </main>
+
+    <script src="java/fii.js"></script>
     <script src="java/mobile-navbar.js"></script>
   </body>
 </html>
